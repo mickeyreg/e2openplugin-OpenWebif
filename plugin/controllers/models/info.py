@@ -147,49 +147,11 @@ def getInfo():
 	info['machinebuild'] = getMachineBuild()
 
 	chipset = "unknown"
-	if fileExists("/etc/.box"):
-		f = open("/etc/.box",'r')
-		model = f.readline().strip().lower()
-		f.close()
-		if model.startswith("ufs") or model.startswith("ufc"):
-			if model in ("ufs910", "ufs922", "ufc960"):
-				chipset = "SH4 @266MHz"
-			else:
-				chipset = "SH4 @450MHz"
-		elif model in ("topf", "tf7700hdpvr"):
-			chipset = "SH4 @266MHz"
-		elif model.startswith("azbox"):
-			f = open("/proc/stb/info/model",'r')
-			model = f.readline().strip().lower()
-			f.close()
-			if model == "me":
-				chipset = "SIGMA 8655"
-			elif model == "minime":
-				chipset = "SIGMA 8653"
-			else:
-				chipset = "SIGMA 8634"
-		elif model.startswith("spark"):
-			if model == "spark7162":
-				chipset = "SH4 @540MHz"
-			else:
-				chipset = "SH4 @450MHz"
-	elif fileExists("/proc/stb/info/azmodel"):
+	if fileExists("/proc/stb/info/model"):
 		f = open("/proc/stb/info/model",'r')
 		model = f.readline().strip().lower()
 		f.close()
-		if model == "me":
-			chipset = "SIGMA 8655"
-		elif model == "minime":
-			chipset = "SIGMA 8653"
-		else:
-			chipset = "SIGMA 8634"
-	elif fileExists("/proc/stb/info/model"):
-		f = open("/proc/stb/info/model",'r')
-		model = f.readline().strip().lower()
-		f.close()
-		if model == "tf7700hdpvr":
-			chipset = "SH4 @266MHz"
-		elif model == "nbox":
+		if model == "nbox":
 			chipset = "STi7100 @266MHz"
 		elif model == "arivalink200":
 			chipset = "STi7109 @266MHz"
