@@ -125,6 +125,7 @@ class AjaxController(BaseController):
 	def P_screenshot(self, request):
 		box = {}
 		box['brand'] = "dmm"
+<<<<<<< HEAD
 		if getMachineBrand() == 'Vu+':
 			box['brand'] = "vuplus"
 		elif getMachineBrand() == 'GigaBlue':
@@ -137,6 +138,8 @@ class AjaxController(BaseController):
 			box['brand'] = "techomate"
 		elif fileExists("/proc/stb/info/azmodel"):
 			box['brand'] = "azbox"
+=======
+>>>>>>> 1390f50... Update for GOS
 		return { "box": box }
 
 	def P_powerstate(self, request):
