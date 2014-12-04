@@ -141,17 +141,10 @@ def getInfo():
 	# TODO: get webif versione somewhere!
 	info = {}
 
-<<<<<<< HEAD
 	info['brand'] = getMachineBrand()
 	info['model'] = getMachineName()
 	info['boxtype'] = getBoxType()
 	info['machinebuild'] = getMachineBuild()
-=======
-	brand = "unknown"
-	model = "unknown"
-	model_desc = "unknown"
-	chipset = "unknown"
->>>>>>> 1390f50... Update for GOS
 
 	chipset = "unknown"
 	if fileExists("/proc/stb/info/model"):
