@@ -46,7 +46,7 @@ config.OpenWebif.webcache.remotegrabscreenshot = ConfigYesNo(default = True)
 config.OpenWebif.webcache.zapstream = ConfigYesNo(default = False)
 config.OpenWebif.webcache.epg_desc_search = ConfigYesNo(default = False)
 # HTTPS
-config.OpenWebif.https_enabled = ConfigYesNo(default=False)
+config.OpenWebif.https_enabled = ConfigYesNo(default=True)
 config.OpenWebif.https_port = ConfigInteger(default = 443, limits=(1, 65535) )
 config.OpenWebif.https_auth = ConfigYesNo(default=True)
 config.OpenWebif.https_clientcert = ConfigYesNo(default=False)
